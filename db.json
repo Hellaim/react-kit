@@ -1,0 +1,46 @@
+{
+  "users": [
+    {
+      "id": "0861",
+      "email": "Mail@mail.ru",
+      "name": "Stepan",
+      "password": "122344"
+    },
+    {
+      "id": "b078",
+      "email": "gmail@gmail.com",
+      "name": "Kurwa",
+      "password": "321233323"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "title": "Продукт номер 1",
+      "description": "Это описание продукта номер 1",
+      "price": 12563,
+      "count": 2
+    },
+    {
+      "id": 2,
+      "title": "Продукт номер 2",
+      "description": "Это описание продукта номер 2",
+      "price": 2500,
+      "count": 3
+    },
+    {
+      "id": 3,
+      "title": "Продукт номер 3",
+      "description": "Это описание продукта номер 3",
+      "price": 124,
+      "count": 5
+    },
+    {
+      "id": 4,
+      "title": "Продукт номер 4",
+      "description": "Это описание продукта номер 4",
+      "price": 43,
+      "count": 11
+    }
+  ]
+}

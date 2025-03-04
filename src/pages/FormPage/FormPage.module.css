@@ -1,0 +1,12 @@
+.container {
+  max-width: 25rem;
+  margin: 0 auto;
+}
+
+input.error {
+  border: 1px solid hsl(0, 100%, 50%);
+}
+
+p.error {
+  color: hsl(0, 100%, 50%);
+}

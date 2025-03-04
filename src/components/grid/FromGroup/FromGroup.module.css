@@ -1,0 +1,15 @@
+.form-group {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.form-group.column {
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.form-group.row {
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+}

@@ -10,10 +10,15 @@ import { decrement, increment } from '@/store/slices/testSlice'
 // tanstack
 import { useQuery } from '@tanstack/react-query'
 
-const fetchData = async () => {
+type Post = {
+  id: number
+  title: string
+}
+
+const fetchData = async (): Promise<Post[]> => {
   const response = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=10')
   if (!response.ok) {
-    throw new Error('Network response was not ok')
+    throw new Error('Ошибка сети')
   }
   return response.json()
 }
@@ -23,8 +28,12 @@ export default function Demo() {
   const dispatch = useDispatch()
   const test = useSelector((state: RootState) => state.test.value)
 
-  // tanstak
-  const { data, error, isLoading } = useQuery({
+  // tanstack
+  const {
+    data = [],
+    error,
+    isLoading,
+  } = useQuery<Post[]>({
     queryKey: ['posts'],
     queryFn: fetchData,
   })
@@ -37,10 +46,10 @@ export default function Demo() {
       <h1>DEMO</h1>
       <h2>Test redux</h2>
       <p>Value: {test}</p>
-      <Button className={s['btn-m']} onClick={() => dispatch(increment())}>
-        increment
+      <Button className={s['btn-m']} onClick={() => dispatch(decrement())}>
+        decrement
       </Button>
-      <Button onClick={() => dispatch(decrement())}>decrement</Button>
+      <Button onClick={() => dispatch(increment())}>increment</Button>
       <h2>Test Tanstack</h2>
       <ul>
         {data.map((post: { id: number; title: string }) => (

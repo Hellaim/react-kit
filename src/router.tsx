@@ -1,5 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom'
-import { Home, About, Demo } from '@/pages'
+import { Home, About, Demo, FormPage, CartPage } from '@/pages'
 import { Layout } from './Layout'
 import { Suspense } from 'react'
 
@@ -29,6 +29,22 @@ export const router = createBrowserRouter([
         element: (
           <Suspense fallback={<p>Loading...</p>}>
             <Demo />
+          </Suspense>
+        ),
+      },
+      {
+        path: '/form-page',
+        element: (
+          <Suspense fallback={<p>Loding...</p>}>
+            <FormPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: '/cart',
+        element: (
+          <Suspense fallback={<p>Loding...</p>}>
+            <CartPage />
           </Suspense>
         ),
       },
